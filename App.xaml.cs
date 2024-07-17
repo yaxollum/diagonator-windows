@@ -1,9 +1,5 @@
-﻿using System;
-using System.Configuration;
-using System.Data;
+﻿using System.CommandLine;
 using System.Windows;
-using System.CommandLine;
-using System.Runtime.InteropServices;
 
 namespace WpfApp1
 {
