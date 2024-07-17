@@ -17,21 +17,24 @@ namespace WpfApp1
             base.OnStartup(e);
             var args = e.Args;
             var lineDirection = new Option<int>(
-            name: "--line-direction",
-            description: "Direction of the lines (counterclockwise from the bottom of the screen).")
+                name: "--line-direction",
+                description: "Direction of the lines (counterclockwise from the bottom of the screen).",
+                getDefaultValue: () => 30)
             { ArgumentHelpName = "degrees" };
             var lineWidth = new Option<int>(
                 name: "--line-width",
-                description: "Width of the lines.")
+                description: "Width of the lines.",
+                getDefaultValue: () => 5)
             { ArgumentHelpName = "pixels" };
             var lineSpacing = new Option<int>(
                 name: "--line-spacing",
-                description: "Spacing between the lines.")
+                description: "Spacing between the lines.",
+                getDefaultValue: () => 50)
             { ArgumentHelpName = "pixels" };
-            var topMargin = new Option<int>(name: "--top-margin") { ArgumentHelpName = "pixels" };
-            var bottomMargin = new Option<int>(name: "--bottom-margin") { ArgumentHelpName = "pixels" };
-            var leftMargin = new Option<int>(name: "--left-margin") { ArgumentHelpName = "pixels" };
-            var rightMargin = new Option<int>(name: "--right-margin") { ArgumentHelpName = "pixels" };
+            var topMargin = new Option<int>(name: "--top-margin", getDefaultValue: () => 0) { ArgumentHelpName = "pixels" };
+            var bottomMargin = new Option<int>(name: "--bottom-margin", getDefaultValue: () => 0) { ArgumentHelpName = "pixels" };
+            var leftMargin = new Option<int>(name: "--left-margin", getDefaultValue: () => 0) { ArgumentHelpName = "pixels" };
+            var rightMargin = new Option<int>(name: "--right-margin", getDefaultValue: () => 0) { ArgumentHelpName = "pixels" };
 
             var shouldExit = true;
             var rootCommand = new RootCommand("A tool that draws diagonal lines across your screen.")
