@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.IO.Pipes;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -17,11 +18,11 @@ namespace WpfApp1
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        public MainWindow(int lineDirection, int lineWidth, int lineSpacing, int topMargin, int bottomMargin, int leftMargin, int rightMargin)
         {
             InitializeComponent();
             var myLine = new Line();
-            myLine.Stroke = System.Windows.Media.Brushes.Black;
+            myLine.Stroke = Brushes.Black;
             myLine.X1 = 1;
             myLine.X2 = 50;
             myLine.Y1 = 1;
